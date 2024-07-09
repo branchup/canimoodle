@@ -1,4 +1,4 @@
-import { readFileSync, readdirSync, writeFileSync } from 'fs';
+import { readFileSync, readdirSync, writeFileSync, existsSync, mkdirSync } from 'fs';
 import { JSDOM } from 'jsdom';
 import { compareVersions, compare } from 'compare-versions';
 
@@ -57,4 +57,7 @@ const document = dom.window.document;
 document.getElementById('features-json').innerHTML = JSON.stringify(features);
 document.getElementById('versions-json').innerHTML = JSON.stringify(moodleVersions);
 
-writeFileSync('dist/index.html', dom.serialize());
+if (!existsSync('./dist')) {
+  mkdirSync('./dist');
+}
+writeFileSync('./dist/index.html', dom.serialize());
