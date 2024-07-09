@@ -1,0 +1,80 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Can I Moodle</title>
+  <link href="styles.css" rel="stylesheet">
+  <script defer="" src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body class="py-8">
+  <header class="mx-auto max-w-screen-md text-center mb-8">
+    <h1 class="text-3xl mb-2">Can I Moodle?</h1>
+    <p class="text-center">Features and compatibility across Moodle versions.</p>
+  </header>
+  <div class="max-w-screen-md mx-auto" x-data="state">
+    <div class="my-4">
+      <input type="text" class="px-4 py-2 text-xl w-full border-2 border-gray-100 rounded" placeholder="Filter..." x-model="filterTerm">
+    </div>
+    <div class="space-y-4">
+      <template x-for="feature in features" :key="feature.id">
+        <section class="rounded border border-gray-100 p-4" x-template="">
+          <div class="flex mb-4">
+            <div class="grow">
+              <h3 class="text-lg font-bold mb-4" x-text="feature.title">PHP 7.1</h3>
+              <div class="space-y-4">
+                <div x-html="feature.description_html" class="grow has-code-sm">
+                  Compatibility with PHP 7.1.
+                </div>
+                <div x-html="feature.notes_html" x-show="feature.notes" class="text-sm text-gray-700 has-code-xs"></div>
+                <div x-show="feature.links &amp;&amp; feature.links.length > 0">
+                  <h4 class="font-bold text-base mb-2">Resources</h4>
+                  <ul class="list-disc pl-6">
+                    <template x-for="link in feature.links">
+                      <li><a :href="link.url" x-text="link.title" class="text-blue-600 hover:underline"></a></li>
+                    </template>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="shrink-0 pt-1">
+              <div class="flex items-end gap-2 flex-col text-right text-sm">
+                <div class="rounded bg-green-100 leading-none px-2 py-1">Added in <span class="font-bold" x-text="feature.added">3.11</span></div>
+                <div class="rounded bg-yellow-100 leading-none px-2 py-1" x-show="feature.deprecated">Deprecated in <span class="font-bold" x-text="feature.deprecated">3.11</span></div>
+                <div class="rounded bg-red-100 leading-none px-2 py-1" x-show="feature.removed">Removed in <span class="font-bold" x-text="feature.removed">4.4</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="text-xs text-gray-500">Moodle version</div>
+          <div class="grid grid-flow-col gap-0 text-center">
+            <template x-for="version in versions">
+              <div class="p-0.5" x-text="version" :class="{'bg-green-300': feature.available_in.includes(version), 'bg-red-300': feature.unavailable_in.includes(version), 'bg-amber-200': feature.deprecated_in.includes(version)}">3.11</div>
+            </template>
+          </div>
+        </section>
+      </template>
+    </div>
+  </div>
+  <script id="versions-json" type="application/json">["3.11","4.0","4.1","4.2","4.3","4.4","4.5"]</script>
+  <script id="features-json" type="application/json">[{"title":"Hook before_html_attributes","description":"Allows plugins to add, remove or modify any attributes of the HTML tag by registering to `core\\hook\\output\\before_html_attributes`.","added":"4.4","notes":"This supercedes the legacy callback `add_htmlattributes`.","links":[{"title":"Hooks documentation","url":"https://moodledev.io/docs/apis/core/hooks"}],"id":"hook-before_html_attributes","description_html":"Allows plugins to add, remove or modify any attributes of the HTML tag by registering to <code>core\\hook\\output\\before_html_attributes</code>.","notes_html":"This supercedes the legacy callback <code>add_htmlattributes</code>.","compatibility":{"3.11":false,"4.0":false,"4.1":false,"4.2":false,"4.3":false,"4.4":true,"4.5":true},"available_in":["4.4","4.5"],"deprecated_in":[],"unavailable_in":["3.11","4.0","4.1","4.2","4.3"]},{"title":"PHP 8.3","description":"Compatibility with PHP 8.3.","added":"4.4","id":"php-83","description_html":"Compatibility with PHP 8.3.","notes_html":"","compatibility":{"3.11":false,"4.0":false,"4.1":false,"4.2":false,"4.3":false,"4.4":true,"4.5":true},"available_in":["4.4","4.5"],"deprecated_in":[],"unavailable_in":["3.11","4.0","4.1","4.2","4.3"]},{"title":"PHP 8.2","description":"Compatibility with PHP 8.2.","added":"4.2","id":"php-82","description_html":"Compatibility with PHP 8.2.","notes_html":"","compatibility":{"3.11":false,"4.0":false,"4.1":false,"4.2":true,"4.3":true,"4.4":true,"4.5":true},"available_in":["4.2","4.3","4.4","4.5"],"deprecated_in":[],"unavailable_in":["3.11","4.0","4.1"]},{"title":"PHP 8.1","description":"Compatibility with PHP 8.1.","added":"4.1","id":"php-81","description_html":"Compatibility with PHP 8.1.","notes_html":"","compatibility":{"3.11":false,"4.0":false,"4.1":true,"4.2":true,"4.3":true,"4.4":true,"4.5":true},"available_in":["4.1","4.2","4.3","4.4","4.5"],"deprecated_in":[],"unavailable_in":["3.11","4.0"]},{"title":"PHP 8.0","description":"Compatibility with PHP 8.0.","added":"3.11","removed":"4.4","id":"php-80","description_html":"Compatibility with PHP 8.0.","notes_html":"","compatibility":{"3.11":true,"4.0":true,"4.1":true,"4.2":true,"4.3":true,"4.4":false,"4.5":false},"available_in":["3.11","4.0","4.1","4.2","4.3"],"deprecated_in":[],"unavailable_in":["4.4","4.5"]},{"title":"PHP 7.4","description":"Compatibility with PHP 7.4.","added":"3.11","removed":"4.2","id":"php-74","description_html":"Compatibility with PHP 7.4.","notes_html":"","compatibility":{"3.11":true,"4.0":true,"4.1":true,"4.2":false,"4.3":false,"4.4":false,"4.5":false},"available_in":["3.11","4.0","4.1"],"deprecated_in":[],"unavailable_in":["4.2","4.3","4.4","4.5"]},{"title":"PHP 7.3","description":"Compatibility with PHP 7.3.","added":"3.11","removed":"4.1","id":"php-73","description_html":"Compatibility with PHP 7.3.","notes_html":"","compatibility":{"3.11":true,"4.0":true,"4.1":false,"4.2":false,"4.3":false,"4.4":false,"4.5":false},"available_in":["3.11","4.0"],"deprecated_in":[],"unavailable_in":["4.1","4.2","4.3","4.4","4.5"]},{"title":"Callback add_htmlattributes","description":"Allows plugins to add, remove or modify any attributes of the HTML tag.","added":"3.3","deprecated":"4.4","notes":"This is superceded by the hook `before_html_attributes`.","id":"callback-add_htmlattributes","description_html":"Allows plugins to add, remove or modify any attributes of the HTML tag.","notes_html":"This is superceded by the hook <code>before_html_attributes</code>.","compatibility":{"3.11":true,"4.0":true,"4.1":true,"4.2":true,"4.3":true,"4.4":"deprecated","4.5":"deprecated"},"available_in":["3.11","4.0","4.1","4.2","4.3"],"deprecated_in":["4.4","4.5"],"unavailable_in":[]}]</script>
+  <script>
+    const VERSIONS = JSON.parse(document.getElementById('versions-json').textContent);
+    const FEATURES = JSON.parse(document.getElementById('features-json').textContent);
+    document.addEventListener('alpine:init', () => {
+      Alpine.data('state', () => ({
+        versions: VERSIONS,
+        filterTerm: '',
+        get features() {
+          if (!this.filterTerm) {
+            return FEATURES;
+          }
+          return FEATURES.filter(feature => {
+            return feature.title.toLowerCase().includes(this.filterTerm.toLowerCase()) ||
+              feature.description.toLowerCase().includes(this.filterTerm.toLowerCase());
+          });
+        },
+      }));
+    });
+  </script>
+
+
+</body></html>
