@@ -1,0 +1,6 @@
+{
+  "title": "PHP 7.3",
+  "description": "Compatibility with PHP 7.3.",
+  "added": "3.11",
+  "removed": "4.1"
+}
