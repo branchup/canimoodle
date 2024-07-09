@@ -1,7 +1,6 @@
 {
   "title": "Callback add_htmlattributes",
   "description": "Allows plugins to add, remove or modify any attributes of the HTML tag.",
-  "component": "core",
   "added": "3.3",
   "deprecated": "4.4",
   "notes": "This is superceded by the hook `before_html_attributes`."

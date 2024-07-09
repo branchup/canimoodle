@@ -1,7 +1,6 @@
 {
   "title": "Hook before_html_attributes",
   "description": "Allows plugins to add, remove or modify any attributes of the HTML tag by registering to `core\\hook\\output\\before_html_attributes`.",
-  "component": "core",
   "added": "4.4",
   "notes": "This supercedes the legacy callback `add_htmlattributes`.",
   "links": [{ "title": "Hooks documentation", "url": "https://moodledev.io/docs/apis/core/hooks" }]
