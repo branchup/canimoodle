@@ -1,0 +1,11 @@
+{
+  "title": "Form hideIf",
+  "description": "The `hideIf` method supports removing an element from the form based on the value of another field.",
+  "added": "3.4",
+  "links": [
+    {
+      "title": "Documentation",
+      "url": "https://moodledev.io/docs/apis/subsystems/form#hideif"
+    }
+  ]
+}
