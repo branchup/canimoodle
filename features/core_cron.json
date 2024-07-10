@@ -1,0 +1,6 @@
+{
+  "title": "core\\cron",
+  "description": "Utility class containing cron-related functions.",
+  "added": "4.2",
+  "notes": "This supercedes `cron_*` functions like `core_setup_user`."
+}

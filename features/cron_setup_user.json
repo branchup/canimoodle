@@ -1,0 +1,7 @@
+{
+  "title": "cron_setup_user",
+  "description": "Sets up current user and course environment (lang, etc.) in cron.",
+  "added": "2.0",
+  "deprecated": "4.2",
+  "notes": "This is superceded by `core\\cron::setup_user`."
+}
