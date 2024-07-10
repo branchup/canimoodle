@@ -1,0 +1,6 @@
+{
+  "title": "Form field choicedropdown",
+  "description": "The `choicedropdown` form field creates a dropdown list with multiple options that support icons and descriptions.",
+  "added": "4.4",
+  "links": [{ "title": "Documentation", "url": "https://moodledev.io/docs/apis/subsystems/form/fields/choicedropdown" }]
+}
