@@ -1,0 +1,11 @@
+{
+  "title": "Dynamic table",
+  "description": "The `core_table\\dynamic` interface allows any `flexible_table` to be converted into a table which is updatable via ajax calls.",
+  "added": "3.9",
+  "links": [
+    {
+      "title": "MDL-68495",
+      "url": "https://tracker.moodle.org/browse/MDL-68495"
+    }
+  ]
+}
