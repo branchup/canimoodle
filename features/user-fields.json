@@ -1,0 +1,6 @@
+{
+  "title": "core_user\\fields",
+  "description": "The core classs `core_user\\fields` provides methods to get of user fields and associated SQL fragments.",
+  "added": "3.11",
+  "notes": "This supercedes `get_extra_user_fields()`, `get_extra_user_fields_sql()`, `get_user_field_name()`, `get_all_user_name_fields()`, and `user_picture::fields()`."
+}

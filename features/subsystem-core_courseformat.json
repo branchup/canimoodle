@@ -1,0 +1,7 @@
+{
+  "title": "Course format subsystem",
+  "description": "The course format subsystem is created in the namespace `core_courseformat`.",
+  "added": "4.0",
+  "notes": "The `base` class in this namespace was previously named `\\format_base`.",
+  "links": [{ "title": "MDL-71863", "url": "https://tracker.moodle.org/browse/MDL-71863" }]
+}
