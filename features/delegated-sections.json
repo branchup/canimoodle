@@ -1,0 +1,9 @@
+{
+  "title": "Delegated sections",
+  "description": "Delegated sections allow components to control dedicated course sections. This is achieved through the use of `core_courseformat\\sectiondelegate` and `core_courseformat\\formatactions::section`.",
+  "added": "4.4",
+  "links": [
+    { "title": "MDL-80186", "url": "https://tracker.moodle.org/browse/MDL-80186" },
+    { "title": "MDL-80187", "url": "https://tracker.moodle.org/browse/MDL-80187" }
+  ]
+}
