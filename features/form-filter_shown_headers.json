@@ -1,0 +1,11 @@
+{
+  "title": "Form filter_shown_headers",
+  "description": "Form sections (headers) can be made hidden by using the method `filter_shown_headers`.",
+  "added": "4.3",
+  "links": [
+    {
+      "title": "Documentation",
+      "url": "https://moodledev.io/docs/apis/subsystems/form#filter_shown_headers"
+    }
+  ]
+}
