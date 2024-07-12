@@ -1,0 +1,5 @@
+{
+  "title": "core_user::get_profile_url",
+  "description": "Returns a `moodle_url` pointing to the user's profile, or course profile.",
+  "added": "4.3"
+}

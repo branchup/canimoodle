@@ -1,0 +1,5 @@
+{
+  "title": "core_user::get_profile_picture",
+  "description": "Returns a `user_picture` renderable that renders into the user's profile picture.",
+  "added": "4.3"
+}

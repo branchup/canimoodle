@@ -1,0 +1,6 @@
+{
+  "title": "core_user::get_fullname",
+  "description": "Computes the full name of a user.",
+  "added": "4.3",
+  "notes": "This will eventually replace the `fullname` global function."
+}

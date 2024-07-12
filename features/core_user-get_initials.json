@@ -1,0 +1,5 @@
+{
+  "title": "core_user::get_initials",
+  "description": "Get the initials of a user in a way compatible with internationalisation.",
+  "added": "4.4"
+}
